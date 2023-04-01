@@ -1,0 +1,29 @@
+<%- include('partials/header'); -%>
+
+    <div id="leaderboard">
+        <div id="points">
+            <div id="player0Wrapper">
+                <h3 id="player0Nickname">Player 1:</h3>
+                <h3 id="player0Points"></h3>
+            </div>
+            <div id="player1Wrapper">
+                <h3 id="player1Nickname">Player 2:</h3>
+                <h3 id="player1Points"></h3>
+            </div>
+        </div>
+        <h1 id="winner"></h1>
+        <button id="readyBtn">
+            Ready
+        </button>
+    </div>
+    <div class="gameWrapper">
+        <div id="chatWrapper">
+            <div id="chatHistory"></div>
+            <textarea id="chat" rows="3" placeholder="Type text..."></textarea>
+        </div>
+        <div id="board"></div>
+    </div>
+
+<script type="module" src="/scripts/chat.js"></script>
+<script type="module" src="/scripts/memory.js"></script>
+<%- include('partials/footer'); -%>
