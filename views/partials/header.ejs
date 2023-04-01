@@ -1,0 +1,25 @@
+<html lang="en">
+<head>
+  <title>Damian Baryga</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Damian Baryga">
+  <link rel="stylesheet" href="/style.css">
+  <script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+<main>
+<nav>
+    <a href="/home">
+        Games
+    </a>
+    <ul>
+  <% if (user) { %>
+    <li>Welcome, <%= user.nickname %></li>
+    <li><a href="/logout">Log out</a></li>
+  <% } else { %>
+    <li><a href="/login">Log in</a></li>
+    <li><a href="/signup" class="btn">Sign up</a></li>
+  <% } %>
+    </ul>
+</nav>

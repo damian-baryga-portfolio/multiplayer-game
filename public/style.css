@@ -1,0 +1,307 @@
+@font-face {
+    font-family: 'Comfortaa';
+    src: url('fonts/comfortaa/Comfortaa-VariableFont_wght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+}
+
+body {
+    background-color: #003228;
+    font-family: Comfortaa, Calibri, serif;
+    margin: 20px;
+    transition: linear 500ms;
+}
+
+body.winning {
+    background-color: #647f79;
+}
+
+nav {
+    align-items: center;
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    text-align: right;
+}
+
+nav li {
+    display: inline;
+    margin-right: 10px;
+}
+
+nav a {
+    font-weight: bold;
+}
+
+nav li, nav a {
+    color: white;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+#login, #signup {
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+#login h2, #signup h2 {
+    margin-bottom: 20px;
+}
+
+#login .inputWrapper, #signup .inputWrapper {
+    display: grid;
+    gap: 5px;
+}
+
+#login input, #signup input {
+    padding: 5px;
+}
+
+#login .error, #signup .error {
+    color: red;
+    font-size: 12px;
+}
+
+#games {
+    align-items: start;
+    background-color: #006048;
+    border-radius: 20px;
+    justify-items: stretch;
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    padding: 50px;
+}
+
+#games a {
+    border: 1px solid white;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    transition: ease-out 200ms;
+}
+
+#games a:hover {
+    box-shadow: 0 15px 15px rgba(0, 0, 0, 1);
+}
+
+#games a img {
+    object-fit: contain;
+    width: 100%;
+}
+
+#games a p {
+    margin: 20px 0 10px;
+}
+
+.gameWrapper {
+    background-color: #006048;
+    border-radius: 20px;
+    display: flex;
+    flex: 1;
+    gap: 20px;
+    max-height: 1100px;
+    overflow: hidden;
+    padding: 50px;
+}
+
+#readyBtn {
+    background: none;
+    border-color: white;
+    border-radius: 10px;
+    color: white;
+    font-family: 'Comfortaa', serif;
+    padding: 10px;
+}
+
+#readyBtn.hidden {
+    visibility: hidden;
+}
+
+#chatWrapper {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    max-width: 250px;
+    overflow: hidden;
+}
+
+#chatWrapper #chatHistory {
+    background-color: rgba(255, 255, 255, 0.6);
+    border: 10px solid #003228;
+    border-bottom: none;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    display: flex;
+    flex-direction: column-reverse;
+    flex-grow: 1;
+    font-size: 12px;
+    overflow-anchor: none;
+    overflow-y: auto;
+    overflow-x: hidden;
+    word-break: break-all;
+}
+
+#chatWrapper #chat {
+    border: 10px solid #003228;
+    border-top: 1px solid black;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    flex-shrink: 0;
+    max-height: 100px;
+    resize: none;
+    outline: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+#chatWrapper #chat.error {
+    background-color: #ffd4d4;
+}
+
+#chatWrapper #chatHistory, #chatWrapper #chat {
+    padding: 5px;
+}
+
+#leaderboard {
+    color: #ffffff;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#leaderboard #points {
+    justify-content: center;
+    display: flex;
+    gap: 50px;
+    margin-bottom: 20px;
+}
+
+#leaderboard #points #player0Wrapper, #leaderboard #points #player1Wrapper {
+    align-items: center;
+    border-radius: 15px;
+    display: flex;
+    gap: 10px;
+    padding: 5px;
+}
+
+#leaderboard #points .active {
+    background-color: rgba(124, 255, 0, 0.3);
+    box-shadow: 0 0 10px rgba(124, 255, 0, 0.4);
+}
+
+#board {
+    display: grid;
+    flex: 1;
+    margin: 0 auto;
+    width: 70%;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-gap: 10px;
+    justify-items: center;
+}
+
+#board {
+    overflow-y: auto;
+}
+
+#board img {
+    border: solid 5px white;
+    object-fit: cover;
+    height: 150px;
+    width: 150px;
+}
+
+#player0Points, #player1Points, #player0Nickname, #player1Nickname {
+    padding: 10px;
+}
+
+#player0Points:empty, #player1Points:empty {
+    display: none;
+}
+
+#player0Nickname, #player1Nickname {
+    border: 2px rgba(255, 255, 255, 0) dashed;
+}
+
+#player0Nickname.join, #player1Nickname.join {
+    border-color: white;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color ease 100ms;
+}
+
+#player0Nickname.join:hover, #player1Nickname.join:hover {
+    background-color: #006048;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 1);
+}
+
+#player0Nickname.ready, #player1Nickname.ready{
+    color: #3cec3c;
+}
+
+#winner {
+    margin-bottom: 10px;
+}
+
+footer {
+    color: #ffffff;
+    margin-top: 30px;
+    text-align: center;
+}
+
+@media(max-width: 1100px) {
+    #games {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    #board {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media(max-width: 768px) {
+    #games {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        overflow: auto;
+    }
+
+    .gameWrapper {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    #chatWrapper {
+        flex: none;
+        order: 2;
+        min-height: 150px;
+        max-width: none;
+    }
+
+    #board {
+        order: 1;
+        width: 100%;
+    }
+
+    #board img {
+        height: 100px;
+        width: 100px;
+    }
+}
