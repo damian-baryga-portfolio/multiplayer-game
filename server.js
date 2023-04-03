@@ -33,7 +33,7 @@ app.get('/*', (req, res) => res.render('home'));
 mongoose.connect(process.env.DB_URI)
     .then(() => {
         app.listen(3000);
-        console.log('Database connected');
+        console.log('Database connected successfully');
     })
     .catch((err) => console.log(err));
 
